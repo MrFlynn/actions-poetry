@@ -1,12 +1,12 @@
 name: CI
-on: push
+on: [push, pull_request]
 
 jobs:
   ci:
     strategy:
       matrix:
         python_version: [3.5, 3.6, 3.7, 3.8]
-        poetry_version: [0.12.17]
+        poetry_version: [1.0]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master

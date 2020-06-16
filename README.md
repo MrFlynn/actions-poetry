@@ -6,7 +6,7 @@ GitHub Actions for Python projects using poetry
 [![GitHub release date](https://img.shields.io/github/release-date/abatilo/actions-poetry.svg)](https://github.com/abatilo/actions-poetry/releases)
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=abatilo/actions-poetry)](https://dependabot.com)
 
-- [sdispater/poetry: Python dependency management and packaging made easy.](https://github.com/sdispater/poetry)
+- [python-poetry/poetry: Python dependency management and packaging made easy.](https://github.com/python-poetry/poetry)
 
 ## Getting started
 
@@ -22,17 +22,17 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Install
-      uses: abatilo/actions-poetry@v1.1.0
+      uses: abatilo/actions-poetry@v1.5.0
       with:
         python_version: 3.8.0
-        poetry_version: 0.12.17
+        poetry_version: 1.0
         working_directory: ./working_dir # Optional, defaults to '.'
         args: install
     - name: Run pytest
-      uses: abatilo/actions-poetry@v1.1.0
+      uses: abatilo/actions-poetry@v1.5.0
       with:
         python_version: 3.8.0
-        poetry_version: 0.12.17
+        poetry_version: 1.0
         working_directory: ./working_dir
         args: run python -m pytest --cov=src --cov-branch --cov-fail-under=100 tests/
 ```
