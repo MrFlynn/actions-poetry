@@ -13,7 +13,9 @@ cd "$INPUT_WORKING_DIRECTORY" || return
 # Fix for virtualenvs defined in .python-version.
 pyenv latest local "$INPUT_PYTHON_VERSION"
 
-sh -c "poetry $*"
+while IFS= read -r c; do
+  sh -c "poetry $c"
+done <<< "$*"
 
 # Step back to starting directory.
 popd > /dev/null 2>&1 || return
